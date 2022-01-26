@@ -1578,7 +1578,7 @@ namespace Fusion8.Cropper
         {
             dpiScale = DeviceDpi / 96.0f;
 
-            feedbackFont = new Font("Verdana", 8f * dpiScale);
+            feedbackFont = new Font("Verdana", 8f);
             
             tabPoints = new[]
             {

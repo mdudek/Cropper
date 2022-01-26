@@ -122,7 +122,7 @@ namespace Fusion8.Cropper
             if (Bounds.Size == Size.Empty && (ClientRectangle.Width != 0 || ClientRectangle.Height != 0)) 
                 return;
             
-            using (Bitmap surface = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format32bppArgb))
+            using (Bitmap surface = new Bitmap(ClientRectangle.Width > 0 ? ClientRectangle.Width : Size.Width, ClientRectangle.Height > 0 ? ClientRectangle.Height : Size.Height, PixelFormat.Format32bppArgb))
             {
                 PaintLayeredWindow(surface, layerOpacity);
             }
