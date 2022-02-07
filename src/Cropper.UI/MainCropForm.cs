@@ -43,7 +43,7 @@ namespace Fusion8.Cropper
 
         private const int ResizeBorderWidth = 18;
         private const int TabHeight = 15;
-        private const int TabTopWidth = TabHeight + 30; // 45
+        private const int TabTopWidth = TabHeight + 55; // 45
         private const int TabBottomWidth = TabHeight + TabTopWidth; // 60
         private const int TransparentMargin = TabBottomWidth;
 
@@ -1379,7 +1379,7 @@ namespace Fusion8.Cropper
         {
             graphics.RotateTransform(90);
             graphics.DrawString(
-                VisibleHeight + " px",
+                $"{VisibleHeight}{(dpiScale != 1f ? " (" + Math.Round(VisibleHeight / dpiScale) + ")" : "")} px",
                 feedbackFont,
                 tabTextBrush,
                 TransparentMargin,
@@ -1389,7 +1389,7 @@ namespace Fusion8.Cropper
         private void PaintWidthString(Graphics graphics)
         {
             graphics.DrawString(
-                VisibleWidth + " px",
+                $"{VisibleWidth}{(dpiScale != 1f ? " (" + Math.Round(VisibleWidth / dpiScale) + ")" : "")} px",
                 feedbackFont,
                 tabTextBrush,
                 TransparentMargin,
